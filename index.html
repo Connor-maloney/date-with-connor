@@ -311,6 +311,10 @@
     letter-spacing: 2px;
     text-shadow: 0 0 10px var(--green);
     animation: blink 1.5s step-end infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
 
   /* ── BUTTONS ── */
@@ -603,9 +607,13 @@
     font-size: clamp(11px, 3.5vw, 18px);
     color: var(--cyan);
     text-shadow: 0 0 16px var(--cyan);
-    letter-spacing: 3px;
     animation: blink 0.9s step-end infinite;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    letter-spacing: 2px;
   }
   .splash-border {
     position: absolute; inset: 16px;
@@ -710,7 +718,7 @@
   <div class="splash-inner">
     <div class="splash-title">Hey Francesca.</div>
     <div class="splash-sub">🔊 Turn your sound on</div>
-    <div class="splash-press">▶ TAP TO START ◀</div>
+    <div class="splash-press"><span>▶</span><span>TAP TO START</span><span>◀</span></div>
   </div>
 </div>
 
@@ -756,7 +764,7 @@
   </div>
 </div>
 
-<div class="choose-label">▶ CHOOSE YOUR NIGHT ◀</div>
+<div class="choose-label"><span>▶</span><span>CHOOSE YOUR NIGHT</span><span>◀</span></div>
 
 <div class="btn-row">
   <button class="fight-btn btn-friday"   onclick="choose('FRIDAY NIGHT')">🗓 FRIDAY NIGHT</button>
