@@ -786,7 +786,7 @@
       <div class="contact-day" id="chosenDay">FRIDAY NIGHT — IT'S A DATE! 💋</div>
       <div class="contact-label">MESSAGE FOR FURTHER DETAILS</div>
       <div class="contact-number">480-849-6153</div>
-      <a class="contact-sub" href="sms:4808496153">▶ TAP TO CONFIRM ◀</a>
+      <a id="sms-link" class="contact-sub" href="sms:4808496153">▶ TAP TO CONFIRM ◀</a>
     </div>
   </div>
 </div>
@@ -835,6 +835,11 @@
     }
   }
 
+  const SMS_MESSAGES = {
+    'FRIDAY NIGHT':     'Pencil me in for Friday night con.',
+    'SATURDAY MORNING': "I'm more of a morning person. Literally can't wait to see you, Con"
+  };
+
   function choose(day) {
     clearInterval(interval);
     document.querySelectorAll('.fight-btn').forEach(b => b.disabled = true);
@@ -843,6 +848,10 @@
     } else {
       document.getElementById('hb1').style.width = '0%';
     }
+    // Set SMS link with pre-populated body
+    const body = encodeURIComponent(SMS_MESSAGES[day] || '');
+    document.getElementById('sms-link').href = 'sms:4808496153?body=' + body;
+
     setTimeout(() => {
       document.getElementById('chosenDay').textContent = day + " — IT'S A DATE! 💋";
       document.getElementById('victory').classList.add('show');
